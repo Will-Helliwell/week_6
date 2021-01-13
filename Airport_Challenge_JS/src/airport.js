@@ -6,7 +6,7 @@ class Airport {
     this.hangar = [];
   };
 
-  land(plane) {
+  landPlane(plane) {
     if (this.hangar.length == this.MAX_CAPACITY) {
       let capacityError = 'The airport is full. Go away!';
       throw new TypeError(capacityError);

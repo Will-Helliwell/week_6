@@ -5,7 +5,7 @@ describe("Airport", () => {
     airport = new Airport();
     airbus = new Plane;
     boeing = new Plane;
-    airport.land(airbus);
+    airport.landPlane(airbus);
   });
 
   it('it is an instance of airport', () => {
@@ -13,7 +13,7 @@ describe("Airport", () => {
   });
 
 
-  describe('#land', () => {
+  describe('#landPlane', () => {
 
     it('should land a plane at the airport and put in hangar', () => {
       expect(airport.isInHangar(airbus)).toEqual(true);
@@ -25,7 +25,7 @@ describe("Airport", () => {
 
     it('should not land the plane in the hangar if full and throw and error', () => {
       expect(function () {
-        airport.land(boeing) 
+        airport.landPlane(boeing)
       }).toThrow(new TypeError('The airport is full. Go away!'));
       expect(airport.isInHangar(boeing)).toEqual(false);
     });
