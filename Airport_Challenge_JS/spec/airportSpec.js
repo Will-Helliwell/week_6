@@ -32,6 +32,18 @@ describe("Airport", () => {
 
   });
 
+  describe('#takeOffPlane', () => {
+    beforeEach(function(){
+      airport.takeOffPlane(airbus)
+    });
+    it('should remove a plane from the airport', () => {
+      expect(airport.isInHangar(airbus)).toEqual(false)
+    });
+    it('should change the plane\'s status to airborne', () => {
+      expect(airbus.isLanded).toEqual(false)
+    });
+  });
+
 
   describe('#isInHangar', () => {
 

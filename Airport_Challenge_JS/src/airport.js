@@ -15,6 +15,13 @@ class Airport {
     };
   };
 
+  takeOffPlane(plane) {
+    let planeIndex = this.hangar.indexOf(plane)
+    this.hangar.splice(plane, 1)
+    plane.takeoff()
+    return plane
+  };
+
   isInHangar(plane) {
     return this.hangar.includes(plane)
   };
